@@ -104,7 +104,73 @@
 .bar-progesive{
 	margin-top: 55%;
 }
-.photo {
-	margin-top: 10%;
-	margin-left: 79%;
+.photo{
+    margin-top: 8% !important;
+}
+
+
+.loader {
+  font-size: 20px;
+  margin: 45% auto;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load4 1.3s infinite linear;
+  animation: load4 1.3s infinite linear;
+}
+@-webkit-keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #0E0D0D, 2em -2em 0 0em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 0em #0E0D0D;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #0E0D0D, 2em -2em 0 0.2em #0E0D0D, 3em 0em 0 0em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 0em #0E0D0D, 3em 0em 0 0.2em #0E0D0D, 2em 2em 0 0em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 0em #0E0D0D, 2em 2em 0 0.2em #0E0D0D, 0em 3em 0 0em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 0em #0E0D0D, 0em 3em 0 0.2em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 0em #0E0D0D, -2em 2em 0 0.2em #0E0D0D, -3em 0em 0 0em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 0.2em #0E0D0D, -2em -2em 0 0em #0E0D0D;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 0em #0E0D0D, -2em -2em 0 0.2em #0E0D0D;
+  }
+}
+@keyframes load4 {
+  0%,
+  100% {
+    box-shadow: 0em -3em 0em 0.2em #0E0D0D, 2em -2em 0 0em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 0em #0E0D0D;
+  }
+  12.5% {
+    box-shadow: 0em -3em 0em 0em #0E0D0D, 2em -2em 0 0.2em #0E0D0D, 3em 0em 0 0em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  25% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 0em #0E0D0D, 3em 0em 0 0.2em #0E0D0D, 2em 2em 0 0em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  37.5% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 0em #0E0D0D, 2em 2em 0 0.2em #0E0D0D, 0em 3em 0 0em #0E0D0D, -2em 2em 0 -0.5em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  50% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 0em #0E0D0D, 0em 3em 0 0.2em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 -0.5em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  62.5% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 0em #0E0D0D, -2em 2em 0 0.2em #0E0D0D, -3em 0em 0 0em #0E0D0D, -2em -2em 0 -0.5em #0E0D0D;
+  }
+  75% {
+    box-shadow: 0em -3em 0em -0.5em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 0.2em #0E0D0D, -2em -2em 0 0em #0E0D0D;
+  }
+  87.5% {
+    box-shadow: 0em -3em 0em 0em #0E0D0D, 2em -2em 0 -0.5em #0E0D0D, 3em 0em 0 -0.5em #0E0D0D, 2em 2em 0 -0.5em #0E0D0D, 0em 3em 0 -0.5em #0E0D0D, -2em 2em 0 0em #0E0D0D, -3em 0em 0 0em #0E0D0D, -2em -2em 0 0.2em #0E0D0D;
+  }
 }

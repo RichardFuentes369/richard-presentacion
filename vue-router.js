@@ -2,145 +2,170 @@ const Profile = Vue.component('Profile', {
  template: 
  `<div class="card-body scrolly">
 		<div class="contenido row">
-			<div class="col-sm-12">
+			<div v-show = "this.hidden === true" class="col-sm-12">
+				<div class="col-sm-12">
+					<div class="row">
+						<h3 class="mb-5 mt-4 titulos">Quien soy</h3>
+					</div>
+				</div>
 				<div class="row">
-					<h3 class="mb-5 mt-4 titulos">Quien soy</h3>
+					<div class="col-sm-9">
+						<div class="row contenidofont">
+							Mi nombre es Javier Ricardo Baron Fuentes, nací el 01 de Junio del año 1996 en la ciudad de Bucaramanga en el departamento de Santander(Colombia).
+							<br><br>
+							Soy amante de la tecnologia y apasionado por el desarrollo y la implementación de nuevas tecnologias que se van desarrollando dia a dia, así
+							logrando los objetivos propuestos y las metas a realizar. Soy de los que piensa que con cualquier tipo de esfuerzo y dedicación se pueden lograr
+							grandes cosas.
+							Ademas de esto, también cuento con una tecnologia en Desarrollo de Sistemas Informaticos de las Unidades Tecnologicas de Santander, tecnologia la cual me ah permitido desenvolverme a nivel personal y profesional llevando a cabo el desarrollo de software a otro nivel, integrando asi mismo, las tecnologias que van saliendo al mercado y las que mas se acomodan al proyecto que este desarrollando.
+							<br><br>
+							Actualmente me encuentro desarrollando software propio con animos de aprender y a su vez emprender, con las tecnologias SPA, aprovechando los frameworks como Vue y Angular, y tambien los frameworks backend como Laravel.
+							<br><br>
+							Mi especialidad es el backend, pero como entuciasta de los cambios tecnologicos también eh estado estudiando lineamientos de diseño y modelos de negocio (CMS, ERP, CRM, ...).
+						</div>				
+					</div>
+					<div class="col-sm-3">
+						<div class="text-center mt-5 photo">
+							<img class="border border-success rounded-circle" src="./imagenes/personales/richard_fuentes.jpg" alt="Generic placeholder image">
+						</div>
+						<div class="mt-4">
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-sm-9">
-					<div class="row contenidofont">
-						Mi nombre es Javier Ricardo Baron Fuentes, nací el 01 de Junio del año 1996 en la ciudad de Bucaramanga en el departamento de Santander(Colombia).
-						<br><br>
-						Soy amante de la tecnologia y apasionado por el desarrollo y la implementación de nuevas tecnologias que se van desarrollando dia a dia, así
-						logrando los objetivos propuestos y las metas a realizar. Soy de los que piensa que con cualquier tipo de esfuerzo y dedicación se pueden lograr
-						grandes cosas.
-						Ademas de esto, también cuento con una tecnologia en Desarrollo de Sistemas Informaticos de las Unidades Tecnologicas de Santander, tecnologia la cual me ah permitido desenvolverme a nivel personal y profesional llevando a cabo el desarrollo de software a otro nivel, integrando asi mismo, las tecnologias que van saliendo al mercado y las que mas se acomodan al proyecto que este desarrollando.
-						<br><br>
-						Actualmente me encuentro desarrollando software propio con animos de aprender y a su vez emprender, con las tecnologias SPA, aprovechando los frameworks como Vue y Angular, y tambien los frameworks backend como Laravel.
-						<br><br>
-						Mi especialidad es el backend, pero como entuciasta de los cambios tecnologicos también eh estado estudiando lineamientos de diseño y modelos de negocio (CMS, ERP, CRM, ...).
-					</div>				
-				</div>
-				<div class="col-sm-3 fixed-top photo">
-					<div class="justify-content-center">
-						<img class="border border-success rounded-circle" src="./imagenes/personales/richard_fuentes.jpg" alt="Generic placeholder image">
-					</div>
-					<div class="mt-4">
-					</div>
-				</div>
+			<div v-show="this.hidden === false" id="contenedor" class="mx-auto" style="margin-top: 14rem !important">
+        <div class="loader" id="loader">Loading...</div>
 			</div>
 		</div>
-	</div>` 
+	</div>`,
+	data() {
+		return {
+			hidden: false
+		}
+	},
+	mounted() {
+		this.charge()
+	},
+	methods: {
+		charge(){
+			setTimeout(() => {
+				this.hidden = true
+		  }, 500)
+		}
+	}
 });
 const Tecnologies = Vue.component('Tecnologies', {
  template: 
 	`<div class="card-body scrolly">
-		<div class="contenido">
-			<div class="col-sm-12">
-				<div class="row">
-					<h3 class="mb-5 mt-4 titulos">Tecnologias que manejo</h3>
-				</div>
-			</div>
-			<div class="mt-2">
-				<hr class="line">
+		<div class="contenido row">
+			<div v-show = "this.hidden === true" class="col-sm-12">
 				<div class="col-sm-12">
 					<div class="row">
-						<div class="col-sm-3 my-auto text-center">
-							<h5 class="subtitulos">Lenguajes backend</h5>
-						</div>
-						<div class="col-sm">
-							<div class="row justify-content-center">
-								<div class="card my-2 mx-2" v-for="lb in model.languaguebackend" :style="{ width: '14rem', height:'6rem', backgroundImage: 'url(' + lb.logo + ')', backgroundSize: '30%', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'}">
-									<div class="card-body">
-										<h5 class="text-up">
-											{{lb.nombre}}
-										</h5>
-									</div>
-								</div>						
-							</div>
-						</div>
+						<h3 class="mb-5 mt-4 titulos">Tecnologias que manejo</h3>
 					</div>
-				</div>
-			</div>
-			<div class="mt-2">
-				<div class="line"></div>
-				<div class="col-sm-12">
-					<div class="row">
-						<div class="col-sm-3 my-auto text-center">
-							<h5 class="subtitulos">Frameworks frontend</h5>
-						</div>
-						<div class="col-sm">
-							<div class="row justify-content-center">
-								<div class="card my-2 mx-2" v-for="ff in model.frameworkfront" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + ff.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
-									<div class="card-body"> 
-										<h5 class="text-up">
-											{{ff.nombre}}
-										</h5>
-									</div>
-								</div>					
-							</div>
-						</div>
 					</div>
-				</div>
-			</div>
-			<div class="mt-2">
-				<div class="line"></div>
-				<div class="col-sm-12">
-					<div class="row">
-						<div class="col-sm-3 my-auto text-center">
-							<h5 class="subtitulos">Herramientas de estilo</h5>
-						</div>
-						<div class="col-sm">
-							<div class="row justify-content-center">
-								<div class="card my-2 mx-2" v-for="ts in model.toolstyle" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + ts.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
-									<div class="card-body">
-										<h5 class="text-up">{{ts.nombre}}</h5>
+					<div class="mt-2">
+						<hr class="line">
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3 my-auto text-center">
+									<h5 class="subtitulos">Lenguajes backend</h5>
+								</div>
+								<div class="col-sm">
+									<div class="row justify-content-center">
+										<div class="card my-2 mx-2" v-for="lb in model.languaguebackend" :style="{ width: '14rem', height:'6rem', backgroundImage: 'url(' + lb.logo + ')', backgroundSize: '30%', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'}">
+											<div class="card-body">
+												<h5 class="text-up">
+													{{lb.nombre}}
+												</h5>
+											</div>
+										</div>						
 									</div>
-								</div>				
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mt-2">
-				<div class="line"></div>
-				<div class="col-sm-12">
-					<div class="row">
-						<div class="col-sm-3 my-auto text-center">
-							<h5 class="subtitulos">Lenguaje de Base de datos</h5>
-						</div>
-						<div class="col-sm">
-							<div class="row justify-content-center">
-								<div class="card my-2 mx-2" v-for="db in model.dataBase" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + db.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
-									<div class="card-body"> 
-										<h5 class="text-up"> {{db.nombre}}
-										</h5>
-									</div>
-								</div>		
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="mt-2">
-				<div class="line"></div>
-				<div class="col-sm-12">
-					<div class="row">
-						<div class="col-sm-3 my-auto text-center">
-							<h5 class="subtitulos">Versionamiento</h5>
-						</div>
-						<div class="col-sm">
-							<div class="row justify-content-center">
-								<div class="card mx-2 my-2" v-for="v in model.versionamiento" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + v.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
-									<div class="card-body"> 
-										<h5 class="text-up">{{v.nombre}}</h5>
-									</div>		
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+					<div class="mt-2">
+						<div class="line"></div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3 my-auto text-center">
+									<h5 class="subtitulos">Frameworks frontend</h5>
+								</div>
+								<div class="col-sm">
+									<div class="row justify-content-center">
+										<div class="card my-2 mx-2" v-for="ff in model.frameworkfront" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + ff.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
+											<div class="card-body"> 
+												<h5 class="text-up">
+													{{ff.nombre}}
+												</h5>
+											</div>
+										</div>					
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2">
+						<div class="line"></div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3 my-auto text-center">
+									<h5 class="subtitulos">Herramientas de estilo</h5>
+								</div>
+								<div class="col-sm">
+									<div class="row justify-content-center">
+										<div class="card my-2 mx-2" v-for="ts in model.toolstyle" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + ts.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
+											<div class="card-body">
+												<h5 class="text-up">{{ts.nombre}}</h5>
+											</div>
+										</div>				
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2">
+						<div class="line"></div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3 my-auto text-center">
+									<h5 class="subtitulos">Lenguaje de Base de datos</h5>
+								</div>
+								<div class="col-sm">
+									<div class="row justify-content-center">
+										<div class="card my-2 mx-2" v-for="db in model.dataBase" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + db.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
+											<div class="card-body"> 
+												<h5 class="text-up"> {{db.nombre}}
+												</h5>
+											</div>
+										</div>		
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="mt-2">
+						<div class="line"></div>
+						<div class="col-sm-12">
+							<div class="row">
+								<div class="col-sm-3 my-auto text-center">
+									<h5 class="subtitulos">Versionamiento</h5>
+								</div>
+								<div class="col-sm">
+									<div class="row justify-content-center">
+										<div class="card mx-2 my-2" v-for="v in model.versionamiento" :style="{ width: '14rem', height:'7rem', backgroundImage: 'url(' + v.logo + ')', backgroundPosition: '50% 50%', backgroundSize: '35%', backgroundRepeat: 'no-repeat'}">
+											<div class="card-body"> 
+												<h5 class="text-up">{{v.nombre}}</h5>
+											</div>		
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div v-show="this.hidden === false" id="contenedor" class="mx-auto" style="margin-top: 14rem !important">
+        <div class="loader" id="loader">Loading...</div>
 			</div>
 		</div>
 	</div>`,
@@ -243,15 +268,26 @@ const Tecnologies = Vue.component('Tecnologies', {
 					'logo': 'imagenes/iconos/git.png'
 				}
 				]
-			}
+			},
+			hidden: false	
+		}
+	},
+	mounted() {
+		this.charge()
+	},
+	methods: {
+		charge(){
+			setTimeout(() => {
+				this.hidden = true
+		  }, 500)
 		}
 	}
 });
 const Project = Vue.component('Project', {
  template: 
 	`<div class="card-body scrolly">
-		<div class="contenido">
-			<div class="col-sm-12">
+		<div class="contenido row">
+			<div v-show = "this.hidden === true" class="col-sm-12">
 				<h3 class="mb-5 mt-4 titulos">Proyectos realizados</h3>
 				<div class="row justify-content-center">
 					<div class="card my-2 mx-4" v-for="proyecto in model.proyectos" :style="{width: '14rem', height: '22rem', backgroundColor: '#0B9F97'}">
@@ -268,6 +304,9 @@ const Project = Vue.component('Project', {
 						</div>
 					</div>
 				</div>
+			</div>
+			<div v-show="this.hidden === false" id="contenedor" class="mx-auto" style="margin-top: 14rem !important">
+        <div class="loader" id="loader">Loading...</div>
 			</div>
 		</div>
 	</div>`,
@@ -307,7 +346,18 @@ const Project = Vue.component('Project', {
 					'isActive': 'true'
 				},
 				]
-			}
+			},
+			hidden: false
+		}
+	},
+	mounted() {
+		this.charge()
+	},
+	methods: {
+		charge(){
+			setTimeout(() => {
+				this.hidden = true
+		  }, 500)
 		}
 	}
 });
@@ -315,7 +365,7 @@ const Contact = Vue.component('Contact', {
  template: 
 	`<div class="card-body scrolly">
 		<div class="contenido row">
-			<div class="col-sm-12">
+			<div v-show = "this.hidden === true" class="col-sm-12">
 				<h3 class=" mb-5 mt-4 titulos">Contactame</h3>
 				<div class="row">
 					<div class="card my-2 mx-4" v-for="re in model.redes" title="click" :style="{ width: '14rem', height:'6rem', backgroundImage: 'url(' + re.logo + ')', backgroundSize: '30%', backgroundPosition: '50% 50%', backgroundRepeat: 'no-repeat'}">
@@ -326,6 +376,9 @@ const Contact = Vue.component('Contact', {
 					</div>
 				</div>
 			</div>
+			<div v-show="this.hidden === false" id="contenedor" class="mx-auto" style="margin-top: 14rem !important">
+        <div class="loader" id="loader">Loading...</div>
+ 			</div>
 		</div>				
 	</div>`,
 	data() {
@@ -363,7 +416,18 @@ const Contact = Vue.component('Contact', {
 						'url': 'https://drive.google.com/file/d/1mhArAR7ZM7zkHvSSw-ansP8T3j6BJmcP/view?usp=sharing'
 					}, 
 				],
-			}
+			},
+			hidden: false
+		}
+	},
+	mounted() {
+		this.charge()
+	},
+	methods: {
+		charge(){
+			setTimeout(() => {
+				this.hidden = true
+		  }, 500)
 		}
 	}
 });
