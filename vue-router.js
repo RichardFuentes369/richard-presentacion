@@ -264,7 +264,7 @@ const Project = Vue.component('Project', {
 						</div>
 						<div class="card-footer">
 							<a v-if="proyecto.isActive =='true'" class="btn btn-block btn-primary border-light" :href="proyecto.url" target="_blank">Ver proyecto</a>
-							<a v-else class="btn btn-block btn-secondary border-light text-white" style="cursor: no-drop">Paila manito</a>
+							<a v-else class="btn btn-block btn-secondary border-light text-white" style="cursor: no-drop">Enlace no disponible</a>
 						</div>
 					</div>
 				</div>
