@@ -1,0 +1,68 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue SPA Demo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Spicy+Rice&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+  <link rel="icon" href="imagenes/favicon/download.png">
+</head>
+<body>
+  <div id="app">
+    <nav class="navbar navbar-light bg-info fixed-top">
+      <a class="navbar-brand text-white">Javier Ricardo Baron Fuentes</a>
+      <div>
+        <a href="https://www.facebook.com/richard.fuentes.369" class="text-white mx-1" target="_blank">
+          <i class="fa fa-facebook" title="Facebook"></i>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=573504284093" class="text-white mx-1" target="_blank">
+          <i class="fa fa-whatsapp" title="Whatsapp"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/richard-fuentes-4265281a4/" class="text-white mx-1" target="_blank">
+          <i class="fa fa-linkedin" title="Linkedin"></i>
+        </a>
+      </div>
+    </nav>
+
+    <div class="mt-5 mb-5">
+      <router-view></router-view>
+    </div>
+
+
+    <nav id="nav2" class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
+      <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#nav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="nav">
+        <router-link to="/profile" class="btn-round  btnseleccionado">
+          <i class="icon fa fa-user fa-2x"></i>
+        </router-link>
+        <router-link to="/tecnologies" class="btn-round  btnseleccionado">
+          <i class="icon fa fa-gears fa-2x"></i>
+        </router-link>
+        <router-link to="/project" class="btn-round  btnseleccionado">
+          <i class="icon fa fa-book fa-2x"></i>
+        </router-link>
+        <router-link to="/contact" class="btn-round  btnseleccionado">
+          <i class="icon fa fa-address-book-o fa-2x"></i>
+        </router-link>
+      </div>
+    </nav>
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="vue-router.js"></script>
+</body>
+</html>
