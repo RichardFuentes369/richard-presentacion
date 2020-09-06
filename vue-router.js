@@ -413,7 +413,7 @@ const Contact = Vue.component('Contact', {
 					{
 						'nombre': 'Curriculum',
 						'logo': 'imagenes/iconos/cv.svg',
-						'url': 'https://drive.google.com/file/d/1mhArAR7ZM7zkHvSSw-ansP8T3j6BJmcP/view?usp=sharing'
+						'url': 'https://bit.ly/357GR8B'
 					}, 
 				],
 			},
