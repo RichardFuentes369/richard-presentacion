@@ -184,7 +184,13 @@ const Tecnologies = Vue.component('Tecnologies', {
 					'size': '38%',
 					'porcentaje': '75%',
 					'logo': 'imagenes/iconos/php.png',
-				}
+				},
+				{
+					'nombre':'Node',
+					'size': '38%',
+					'porcentaje': '75%',
+					'logo': 'imagenes/iconos/node.png',
+				},
 				],			
 				frameworkback: [
 				{
